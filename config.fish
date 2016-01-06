@@ -29,7 +29,7 @@ if which docker-machine >/dev/null
     eval (docker-machine env vmware-fusion)
     set fish_greeting "Docker Machine and Docker are ready to use"
   else
-    set fish_greeting "Docker machine status:$tab$docker_machine_status"$newline"Type$green_s docker machine start vmware-fusion; and eval (docker-machine env vmware-fusion)$green_e to start"
+    set fish_greeting "Docker machine status:$tab$docker_machine_status"$newline"Type$green_s docker-machine start vmware-fusion; and eval (docker-machine env vmware-fusion)$green_e to start"
   end
 else
   set fish_greeting "Docker Machine is not installed"
