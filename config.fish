@@ -36,3 +36,7 @@ else
 end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+function fish_right_prompt
+    echo (date "+%m/%d/%y %H:%M:%S")" | "(set -q DESK_NAME; and echo $DESK_NAME; or echo no active desk)
+end
