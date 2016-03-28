@@ -16,6 +16,8 @@ set -l tab \x09
 set -l green_s \x1b\x5b32m
 set -l green_e \x1b\x5b30m\x1b\x28B\x1b\x5bm
 
+nvm use default >/dev/null
+
 if which docker-machine >/dev/null
   set -l docker_machine_status (docker-machine status vmware-fusion)
   if [ $docker_machine_status = "Running" ]
