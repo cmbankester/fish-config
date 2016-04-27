@@ -24,6 +24,8 @@ It is assumed that:
 ```fish
 mv $HOME/.config/fish{,.bak}
 git clone git@github.com:cmbankester/fish-config.git $HOME/.config/fish
+## optional:
+# touch $HOME/.config/fish/config.local.fish # for non-git-tracked stuff
 exec fish # to reload shell
 fundle install # to install fundle plugins
 ```

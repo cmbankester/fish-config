@@ -8,6 +8,8 @@ fundle init
 
 set -gx PATH /usr/local/sbin $PATH
 
+test -e (dirname $argv[1])/config.local.fish; and source (dirname $argv[1])/config.local.fish
+
 # Load desks
 test -n "$DESK_ENV"; and . "$DESK_ENV"; or true
 

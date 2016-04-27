@@ -2,8 +2,14 @@ function update-remotes --description "SSH's to each of the provided servers and
   set -l arg_count (count $argv)
   if [ $arg_count -gt 0 ]
     if [ $argv[1] = "--check" ]
-      for i in (seq 2 $arg_count)
-        _check-remote $argv[$i]
+      set -l has_updates
+      if [ $arg_count -gt 1 ]
+        for i in (seq 2 $arg_count)
+          _check-remote $argv[$i]; and set has_updates $has_updates $argv[$i]
+        end
+      end
+      if [ (count $has_updates) -gt 0 ]
+        printf "UPDATES AVAILABLE FOR: %s" "$has_updates"
       end
     else
       for remote in $argv
@@ -28,8 +34,10 @@ function _check-remote -a servername
   ssh $servername yum -q check-update | _pipeset output
   if [ $output ]
     printf "--------UPDATES:--------%s\n" $output
+    return 0
   else
     printf "-------NO UPDATES-------\n\n"
+    return 1
   end
 end
 
