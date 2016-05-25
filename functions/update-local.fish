@@ -3,8 +3,8 @@ function update-local --description 'Updates brew, upgrades atom packages'
 end
 
 function _apmup --description 'Upgrades atom packages'
-  printf "> apm upgrade\n"; and \
-  apm upgrade; or \
+  printf "> apm upgrade --confirm false\n"; and \
+  apm upgrade --confirm false; or \
   _printfail "apm upgrade failed..."
 end
 
