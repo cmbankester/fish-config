@@ -14,9 +14,9 @@ It is assumed that:
   chsh -s /usr/local/bin/fish
   ```
 
-* Oh My Fish is installed to `$HOME/.local/share/omf`
-  ```bash
-  curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+* Fisherman is installed
+  ```fish
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
   ```
 
 ## Install
@@ -27,15 +27,8 @@ git clone git@github.com:cmbankester/fish-config.git $HOME/.config/fish
 ## optional:
 # touch $HOME/.config/fish/config.local.fish # for non-git-tracked stuff
 exec fish # to reload shell
-fundle install # to install fundle plugins
 ```
 
 ## TODO
 
-* Remove reliance on Oh My Fish
-  * Instead, use
-    [oh-my-fish-core](https://github.com/tuvistavie/oh-my-fish-core) fundle
-    plugin(s)
-* Add Desk installation to readme
-* Add Deskfiles?
-* Create fundle plugin?
+* Add Desk installation / integration to readme
