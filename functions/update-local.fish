@@ -19,5 +19,5 @@ function _brewup --description 'Updates brew remote and upgrades any packages ma
 end
 
 function _printfail
-  printf "%s" "$argv"; and return false
+  printf "%s" "$argv"; and return 1
 end

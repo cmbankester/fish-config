@@ -1,11 +1,3 @@
-# Add bass plugin
-fundle plugin 'edc/bass'
-fundle plugin 'tuvistavie/oh-my-fish-core'
-fundle plugin 'oh-my-fish/theme-default'
-
-# Initialize fundle plugins
-fundle init
-
 set -gx PATH /usr/local/sbin $PATH
 
 test -e (dirname (status -f))/config.local.fish; and source (dirname (status -f))/config.local.fish

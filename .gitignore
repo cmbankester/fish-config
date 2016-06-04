@@ -1,5 +1,16 @@
 fish_history
 fish_read_history
 fishd.*
-fundle
 config.local.fish
+functions/*
+!functions/changelog.fish
+!functions/feature.fish
+!functions/func-description.fish
+!functions/gbu.fish
+!functions/hotfix.fish
+!functions/nginx_status.fish
+!functions/postgres_status.fish
+!functions/print_dirs.fish
+!functions/release.fish
+!functions/update-local.fish
+!functions/update-remotes.fish
