@@ -14,3 +14,9 @@ functions/*
 !functions/release.fish
 !functions/update-local.fish
 !functions/update-remotes.fish
+
+conf.d/*
+
+completions/*
+!completions/desk.fish
+!completions/fisher.fish
