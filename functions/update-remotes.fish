@@ -21,17 +21,17 @@ end
 
 function _update-remote -a servername
   printf "Updating packages for %s...\n" $servername
-  printf "> ssh %s yum update -y\n" $servername
+  printf "> ssh %s sudo yum update -y\n" $servername
   printf "--------OUTPUT:--------\n"
 
-  ssh $servername yum update -y
+  ssh $servername sudo yum update -y
 end
 
 function _check-remote -a servername
   printf "Checking %s for updates...\n" $servername
-  printf "> ssh %s yum -q check-update\n" $servername
+  printf "> ssh %s sudo yum -q check-update\n" $servername
 
-  ssh $servername yum -q check-update | _pipeset output
+  ssh $servername sudo yum -q check-update | _pipeset output
   if [ $output ]
     printf "--------UPDATES:--------%s\n" $output
     return 0
