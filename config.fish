@@ -19,10 +19,13 @@ function fish_right_prompt
     printf (date "+%m/%d/%y %H:%M:%S")
     set_color normal
     printf " | "
-    set_color --bold 0f0
-    set -q DESK_NAME
-    and printf $DESK_NAME" ◲ "
-    or printf no active desk
+    if set -q DESK_NAME
+      set_color --bold 0f0
+      printf $DESK_NAME" ◲ "
+    else
+      set_color red
+      printf "no active desk"
+    end
     set_color normal
   )
 end
