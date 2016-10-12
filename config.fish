@@ -20,7 +20,7 @@ function fish_right_prompt
     set_color normal
     printf " | "
     if set -q DESK_NAME
-      set_color --bold 0f0
+      set_color --bold 269286
       printf $DESK_NAME" ◲ "
     else
       set_color red
